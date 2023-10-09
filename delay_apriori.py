@@ -13,3 +13,4 @@ te_ary = te.fit(df).transform(df)
 df = pd.DataFrame(te_ary, columns=te.columns_)
 
 frequent_itemsets = apriori(df, min_support=0.001, use_colnames=True)
+frequent_itemsets.to_csv('association_rules.csv', index=False)
