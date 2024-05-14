@@ -53,6 +53,10 @@ df = pd.read_csv('C:/Users/User/Desktop/THESIS/Datasets/run1_delay.csv')
 #df = pd.read_csv('C:/Users/User/Desktop/THESIS/Datasets/run1_longitude.csv')
 #df = pd.read_csv('C:/Users/User/Desktop/THESIS/Datasets/run1_safe.csv')
 
+df = df.drop('is_attack', axis=1)
+df = df.drop('Time', axis=1)
+df = df.drop('Cyber_weight', axis=1)
+
 data = df[['AV_x', 'AV_y', 'AV_steer', 'AV_vel', 'AV_yaw', 'npc_x', 'npc_y', 'Rollout_num']]
 df_encoded = pd.get_dummies(data, columns=['AV_x', 'AV_y', 'AV_steer', 'AV_vel', 'AV_yaw', 'npc_x', 'npc_y', 'Rollout_num'])
 
